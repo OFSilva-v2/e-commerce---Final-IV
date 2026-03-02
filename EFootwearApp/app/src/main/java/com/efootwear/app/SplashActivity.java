@@ -9,17 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-/**
- * SplashActivity – Tela de abertura do app e-Footwear Outlet.
- *
- * Exibe a logo e o nome do app por 2,5 segundos antes de redirecionar
- * para a MainActivity que contém o WebView.
- *
- * Conceito pedagógico:
- *  - Handler + Runnable para temporizador sem bloqueio da UI Thread
- *  - Animações XML para experiência profissional
- *  - Separação de responsabilidades (Splash ≠ lógica principal)
- */
 public class SplashActivity extends AppCompatActivity {
 
     // Tempo de exibição da splash em milissegundos
