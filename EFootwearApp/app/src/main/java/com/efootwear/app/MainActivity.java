@@ -26,30 +26,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-/**
- * ============================================================
- * MainActivity – Núcleo do app e-Footwear Outlet
- * ============================================================
- *
- * OBJETIVO PEDAGÓGICO:
- * Demonstrar como criar um aplicativo Android que acessa um site
- * de e-commerce usando WebView, com recursos profissionais como:
- *
- *   1. WebView configurado para máxima compatibilidade
- *   2. Verificação de conectividade antes de carregar
- *   3. Barra de progresso durante carregamento
- *   4. Suporte ao botão "Voltar" do Android
- *   5. SwipeRefreshLayout para recarregar com gesto
- *   6. Tratamento de erros de rede
- *   7. Menu de opções (Recarregar, Abrir no Browser, Compartilhar)
- *
- * POR QUE DESENVOLVER APPS ANDROID? (Fonte: androidpro.com.br)
- *   - Android domina ~72% do mercado mobile global
- *   - Play Store tem + de 2,5 bilhões de usuários ativos
- *   - Kotlin/Java = habilidades altamente demandadas
- *   - Monetização: anúncios, assinaturas, compras in-app
- * ============================================================
- */
+
+// ============================================================
+// MainActivity – Núcleo do app e-Footwear Outlet
+// ============================================================
+
 public class MainActivity extends AppCompatActivity {
 
     // URL do site e-Footwear (hospedado via GitHub Pages ou similar)
@@ -254,10 +235,7 @@ public class MainActivity extends AppCompatActivity {
     // Conectividade
     // ─────────────────────────────────────────────────────────
 
-    /**
-     * Verifica se o dispositivo possui conexão ativa com a internet.
-     * Usa NetworkCapabilities (API 23+) em vez do antigo NetworkInfo.
-     */
+
     private boolean temConexao() {
         ConnectivityManager cm =
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -358,11 +336,7 @@ public class MainActivity extends AppCompatActivity {
     // Navegação: Botão Voltar
     // ─────────────────────────────────────────────────────────
 
-    /**
-     * Intercepta o botão "Voltar" do Android.
-     * Se o WebView tiver histórico de navegação, volta para a página anterior.
-     * Caso contrário, fecha o app normalmente.
-     */
+
     @Override
     public void onBackPressed() {
         if (webView.canGoBack()) {
