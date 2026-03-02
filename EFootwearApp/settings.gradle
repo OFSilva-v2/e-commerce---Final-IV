@@ -1,8 +1,3 @@
-/*
- * settings.gradle
- * Define o nome do projeto e inclui os módulos.
- */
-
 pluginManagement {
     repositories {
         google()
