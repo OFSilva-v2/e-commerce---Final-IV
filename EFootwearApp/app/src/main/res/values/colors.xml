@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta de Cores – e-Footwear Outlet -->
+    <!-- Inspirado em marcas de calçados premium: escuro + dourado -->
+
+    <color name="primary">#1A1A2E</color>         <!-- Azul-marinho escuro -->
+    <color name="primary_dark">#0F0F1A</color>     <!-- Mais escuro para status bar -->
+    <color name="primary_light">#2D2D4E</color>    <!-- Variação clara -->
+    <color name="secondary">#E94560</color>        <!-- Vermelho-rosa vibrante -->
+    <color name="accent">#F5A623</color>           <!-- Dourado/âmbar -->
+
+    <!-- Neutros -->
+    <color name="white">#FFFFFF</color>
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+</resources>

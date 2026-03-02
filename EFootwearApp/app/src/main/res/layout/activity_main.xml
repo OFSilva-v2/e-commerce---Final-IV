@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout Principal – contém:
+      • Toolbar customizada
+      • ProgressBar horizontal (carregamento da página)
+      • SwipeRefreshLayout + WebView
+      • Tela de "sem internet" sobreposta
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- AppBar com Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar"
+        app:elevation="4dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            app:titleTextColor="#FFFFFF"
+            app:subtitleTextColor="#CCFFFFFF"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+
+        <!-- ProgressBar abaixo da toolbar, visível durante carregamento -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:max="100"
+            android:progressTint="@color/accent"
+            android:indeterminate="false"
+            android:visibility="gone" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Conteúdo principal -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- SwipeRefreshLayout: puxar para recarregar -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- WebView: exibe o site do e-commerce -->
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!-- Tela de Sem Internet (visível apenas quando não há conexão) -->
+        <LinearLayout
+            android:id="@+id/layoutNoInternet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:background="#FAFAFA"
+            android:visibility="gone">
+
+            <!-- Ícone de sem wi-fi -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📡"
+                android:textSize="72sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sem conexão com a internet"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginTop="16dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verifique sua conexão Wi-Fi ou dados móveis e tente novamente."
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.4" />
+
+            <!-- Botão tentar novamente -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTentarNovamente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tentar novamente"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/primary"
+                android:layout_marginTop="32dp"
+                app:cornerRadius="24dp"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

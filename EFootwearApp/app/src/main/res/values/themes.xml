@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tema Principal do App -->
+    <style name="Theme.EFootwear" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    <!-- Tema da Splash Screen (fullscreen, sem barra de status) -->
+    <style name="Theme.EFootwear.Splash" parent="Theme.EFootwear">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+</resources>

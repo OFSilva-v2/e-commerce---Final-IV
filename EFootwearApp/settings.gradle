@@ -1,0 +1,23 @@
+/*
+ * settings.gradle
+ * Define o nome do projeto e inclui os módulos.
+ */
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "EFootwearApp"
+include ':app'

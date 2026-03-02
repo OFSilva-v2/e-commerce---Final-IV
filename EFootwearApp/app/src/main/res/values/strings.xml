@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">e-Footwear Outlet</string>
+    <string name="tagline">Calçados e Bolsas de Qualidade</string>
+    <string name="menu_reload">Recarregar</string>
+    <string name="menu_open_browser">Abrir no Navegador</string>
+    <string name="menu_share">Compartilhar</string>
+    <string name="menu_about">Sobre</string>
+    <string name="no_internet_title">Sem conexão</string>
+    <string name="no_internet_message">Verifique sua conexão e tente novamente.</string>
+    <string name="btn_retry">Tentar novamente</string>
+</resources>

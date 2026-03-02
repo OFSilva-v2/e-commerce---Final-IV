@@ -1,0 +1,77 @@
+/*
+ * build.gradle – Módulo :app
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Arquivo de configuração Gradle para o módulo principal do app.
+ * Define SDK targets, dependências e opções de build.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    // Namespace do pacote (substitui 'package' no AndroidManifest para AGP 7+)
+    namespace 'com.efootwear.app'
+
+    compileSdk 34   // Compila com Android 14
+
+    defaultConfig {
+        applicationId "com.efootwear.app"
+        minSdk 21           // Android 5.0 Lollipop – cobre ~99% dos dispositivos ativos
+        targetSdk 34        // Android 14 – usa os recursos e políticas mais recentes
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            // Minifica e ofusca o código para APK de produção
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true    // Substitui findViewById() com binding type-safe
+    }
+}
+
+dependencies {
+    // ── AndroidX Core ──────────────────────────────────────────────
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // ── Material Design Components ──────────────────────────────────
+    // Fornece Toolbar, MaterialButton, CardView, Snackbar, etc.
+    implementation 'com.google.android.material:material:1.11.0'
+
+    // ── SwipeRefreshLayout ──────────────────────────────────────────
+    // Permite o gesto "puxar para atualizar" no WebView
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // ── WebKit (WebView avançado) ───────────────────────────────────
+    // Melhora a compatibilidade e segurança do WebView em versões antigas
+    implementation 'androidx.webkit:webkit:1.9.0'
+
+    // ── Testes ─────────────────────────────────────────────────────
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
