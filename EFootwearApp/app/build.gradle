@@ -1,11 +1,3 @@
-/*
- * build.gradle – Módulo :app
- * ─────────────────────────────────────────────────────────────────────────────
- * Arquivo de configuração Gradle para o módulo principal do app.
- * Define SDK targets, dependências e opções de build.
- * ─────────────────────────────────────────────────────────────────────────────
- */
-
 plugins {
     id 'com.android.application'
 }
